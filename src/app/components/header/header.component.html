@@ -1,0 +1,42 @@
+<div class="container-fluid" style="height: 10px; background-color: #1a263a"></div>
+
+    <div class="header" >
+      <div class="col-md-3 text-#1a263a">
+        <h3><fa-icon [icon]="faBook" style="margin-left: 10px;"></fa-icon> Ebooks</h3>
+      </div>
+      <div class="col-md-6">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark" type="button" (click)="log()">Search</button>
+        </form>
+      </div>
+      <div class="col-md-2 login-container" >
+        <a class="btn btn-success"><fa-icon [icon]="faSignIn"></fa-icon> Login</a>
+        <a  class="btn btn-primary">Register</a>
+      </div>
+    </div>
+
+
+    <div class="header-container">
+      <div  class="header-container-nav" id="navbarSupportedContent">
+        <ul class="header-container-list">
+          <li >
+            <a aria-current="page" href="home.html"> <fa-icon [icon]="faHome"></fa-icon> Home</a>
+          </li>
+          <li >
+            <a href="#programming"> <fa-icon [icon]="faOpenBook"></fa-icon> Programming</a>
+          </li>
+          <li >
+            <a  href="#comics"> <fa-icon [icon]="faOpenBook"></fa-icon> Comics</a>
+          </li>
+          <li >
+            <a href="#novels"> <fa-icon [icon]="faOpenBook"></fa-icon> Novels</a>
+          </li>
+        </ul>
+        <form class="form">
+          <button class="form-btn" type="submit"><fa-icon [icon]="faUsers"></fa-icon> Settings</button>
+          <button class="form-btn" type="submit"><fa-icon [icon]="faAddressBook"></fa-icon> Contact Us</button>
+        </form>
+      </div>
+    </div>
+

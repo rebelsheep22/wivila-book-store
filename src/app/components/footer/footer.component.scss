@@ -1,0 +1,28 @@
+.footer-links, footer-links:hover footer-links:focus, footer-links:active {
+  text-decoration: none;
+  color: white;
+  font-size: 200%;
+}
+
+.footer-links:hover {
+  color: cyan;
+}
+.footer {
+  text-align: center;
+  padding: 1% 2%;
+  background-color: #1a263a;
+  &-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+footer{
+
+  a{
+    margin-right: 10px;
+    img{
+      width: 28px;
+    }
+  }
+}
