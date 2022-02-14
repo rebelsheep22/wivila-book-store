@@ -1,0 +1,24 @@
+<app-header></app-header>
+   <div class="background">
+   <div class="box-form">
+      <div class="left">
+        <div class="overlay">
+          <h1>EBook Store.</h1>
+        </div>
+      </div>
+
+
+      <div class="right">
+        <h5 style="font-weight: bold;">Login</h5>
+        <p>Don't have an account? <span style="cursor: pointer; color: rgb(56, 56, 240);" (click)="goToRegister()">Create New One Right Now!</span> It takes less than a minute</p>
+        <form  [formGroup]="loginForm"  class="inputs">
+          <input type="text" required formControlName="username" placeholder="username" >
+          <br>
+          <input type="password" required  formControlName="password" placeholder="password">
+        </form>
+        <button (click)="logIn()">Login</button>
+      </div>
+
+    </div>
+</div>
+<app-footer></app-footer>

@@ -5,14 +5,14 @@
         <h3><fa-icon [icon]="faBook" style="margin-left: 10px;"></fa-icon> Ebooks</h3>
       </div>
       <div class="col-md-6">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-dark" type="button" (click)="log()">Search</button>
+        <form [formGroup]="filterForm" class="d-flex">
+          <input formControlName="searchByName" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark" (click)="search()" type="button" >Search</button>
         </form>
       </div>
       <div class="col-md-2 login-container" >
-        <a class="btn btn-success"><fa-icon [icon]="faSignIn"></fa-icon> Login</a>
-        <a  class="btn btn-primary">Register</a>
+        <a class="btn btn-success" (click)="goToLogin()"><fa-icon [icon]="faSignIn" ></fa-icon> Login</a>
+        <a  class="btn btn-primary" (click)="goToRegister()">Register</a>
       </div>
     </div>
 
@@ -21,7 +21,7 @@
       <div  class="header-container-nav" id="navbarSupportedContent">
         <ul class="header-container-list">
           <li >
-            <a aria-current="page" href="home.html"> <fa-icon [icon]="faHome"></fa-icon> Home</a>
+            <a aria-current="page" (click)="goToHome()"> <fa-icon [icon]="faHome"></fa-icon> Home</a>
           </li>
           <li >
             <a href="#programming"> <fa-icon [icon]="faOpenBook"></fa-icon> Programming</a>
@@ -34,7 +34,7 @@
           </li>
         </ul>
         <form class="form">
-          <button class="form-btn" type="submit"><fa-icon [icon]="faUsers"></fa-icon> Settings</button>
+          <button class="form-btn" (click)="navigateAdmin()"  *ngIf="loggedUser.roles[0] === 'ROLE_ADMIN'"><fa-icon [icon]="faUsers"></fa-icon> Admin Panel </button>
           <button class="form-btn" type="submit"><fa-icon [icon]="faAddressBook"></fa-icon> Contact Us</button>
         </form>
       </div>

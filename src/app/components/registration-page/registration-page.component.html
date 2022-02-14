@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="body-register">
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="#">
+        <form class="user-details" [formGroup]="registerForm">
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input  formControlName="username" type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" formControlName="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" formControlName="password"  placeholder="Enter your password" required>
+          </div>
+        </form>
+          <button class="register-button" *ngIf="1==1" (click)="registerUser()" type="submit" value="Register">Register</button>
+      </form>
+      <div class="success-text" *ngIf="isVisible">User Created</div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

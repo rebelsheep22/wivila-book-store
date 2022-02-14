@@ -128,3 +128,19 @@
   margin: auto;
   margin-top: 20px;
 }
+.back-img {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../../assets/background-image/book.jpeg") no-repeat;
+  background-size: cover;
+  h1{
+  position: relative;
+    margin-bottom: 140px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    font-size: 44px;
+  }
+}
