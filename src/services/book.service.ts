@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Book } from 'src/models/book';
 @Injectable({
@@ -75,12 +76,20 @@ export class BookService {
    })
     return this.http.get(`${environment.apiUrl}/users/books/`+ loggedUser.username, {headers: HttpHeader})
   }
-  uploadBook(id:number, file:any){
+  uploadBook(id:number, file:FormData){
     let loggedUser = JSON.parse(sessionStorage.getItem('loggedUser')!)
     let HttpHeader : HttpHeaders = new HttpHeaders({
      'accept' : '*/*',
      'Authorization' : 'Bearer ' + loggedUser.token
    })
-   return this.http.post(`${environment.apiUrl}/books/uploadFile/`+ id, file, {headers: HttpHeader})
+   return this.http.post(`${environment.apiUrl}/books/uploadFile/${id}`, file, {headers: HttpHeader})
+  }
+  getBookPdf(filename: string){
+    let loggedUser = JSON.parse(sessionStorage.getItem('loggedUser')!)
+    let HttpHeader : HttpHeaders = new HttpHeaders({
+      'Accept': 'application/pdf',
+      'Authorization' : 'Bearer ' + loggedUser.token
+    })
+    return this.http.get(`${environment.apiUrl}/books/getFile/${filename}`, {headers: HttpHeader, responseType: 'blob' })
   }
 }

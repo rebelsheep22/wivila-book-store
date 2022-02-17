@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { BookService } from 'src/services/book.service';
 
 @Component({
@@ -8,21 +9,39 @@ import { BookService } from 'src/services/book.service';
   styleUrls: ['./my-books.component.scss']
 })
 export class MyBooksComponent implements OnInit {
-  books$ : any;
+  books$: any;
   readingUrl!: string;
+  pdf$: Blob | undefined;
   constructor(private router: Router, private bookService: BookService) { }
 
   ngOnInit(): void {
-    this.bookService.getUserBooks().subscribe((res)=>{
+    this.bookService.getUserBooks().subscribe((res) => {
       this.books$ = res;
     })
-    this.readingUrl = "C:/Users/wivil/Desktop/demo/src/main/resources/Books/a_clockwork_orange.pdf"
   }
+
   goBack(): void {
     this.router.navigate(['']);
   }
-  read(url:string):void{
-    console.log(url)
-    window.open(url)
+  
+  showPDF(fileName: string): void {
+    const formattedFileName = this.formatName(fileName);
+    this.bookService.getBookPdf(formattedFileName).subscribe(data => {
+      this.pdf$ = new Blob([data], { type: 'application/pdf' });
+      var bookUrl = window.URL.createObjectURL(data);
+      window.open(bookUrl)
+    });
+  }
+
+  private formatName(url: string): string {
+    var formatted;
+    if(url.includes("\\")){
+      formatted = url.split('\\').join('/').replace(environment.fileUrl,"")
+    }
+    else {
+      formatted = url.replace(environment.fileUrl,"")
+    }
+    
+    return formatted;
   }
 }

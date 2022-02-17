@@ -18,8 +18,8 @@
         <span style="text-align: center; padding: 10; display: block; border-bottom: 1px solid black;">Description: {{book.description}}</span>
         <span style="display: block; border-bottom: 1px solid black;">Category: {{book.category[0].name | titlecase}}</span>
       </div>
-      <button style="margin-left: 110px; margin-top: 10px;" mat-raised-button color="primary" *ngIf="book.category[0].name !== 'COMICS'" (click)="read(book.readingUrl)" >Read</button>
-      <button style="margin-left: 110px; margin-top: 10px;" mat-raised-button color="primary" *ngIf="book.category[0].name === 'COMICS'" (click)="read(book.readingUrl)" >Read</button>
+      <button style="margin-left: 110px; margin-top: 10px;" mat-raised-button color="primary" *ngIf="book.category[0].name !== 'COMICS'" (click)="showPDF(book.readingUrl)" >Read</button>
+      <button style="margin-left: 110px; margin-top: 10px;" mat-raised-button color="primary" *ngIf="book.category[0].name === 'COMICS'" (click)="showPDF(book.readingUrl)" >Read</button>
     </div>
 
   </ng-container>
