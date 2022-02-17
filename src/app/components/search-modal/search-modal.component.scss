@@ -1,0 +1,141 @@
+.footer-links, footer-links:hover footer-links:focus, footer-links:active {
+  text-decoration: none;
+  color: white;
+  font-size: 200%;
+}
+
+.footer-links:hover {
+  color: cyan;
+}
+
+.book-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.book-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.book-section {
+  width: 100%;
+  padding-left: 9%;
+  padding-right: 9%;
+  display: flex;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.bg-custom {
+  background: #1a263a;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 6px;
+}
+
+
+
+.container-buttons {
+  width: 100%;
+  height: 32px;
+  margin-bottom: 8px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  background: #1a263a;
+}
+
+.col-md-6 {
+  margin-left: 150px;
+}
+
+.contact-icons {
+  margin: 20px 10px;
+}
+
+.create-account {
+  margin-top: 30px;
+  padding: 30px;
+  font-size: 150%;
+}
+
+#footer {
+  text-align: center;
+  padding: 1% 2%;
+  background-color: #1a263a;
+}
+
+.form-group {
+  padding: 20px;
+}
+
+.img-div {
+  padding: 3px;
+  border: 1px solid lightgray;
+  border-radius: 1px;
+}
+
+.img-dimensions {
+  width: 160px;
+  height: 255.578px;
+}
+
+.main-title {
+  padding-top: 120px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  font-size: 44px;
+  color: white;
+  text-align: center;
+}
+
+.navbar .nav-item:hover .nav-link {
+  background-color: white;
+  color: #1a263a;
+  border-radius: 15px;
+}
+
+.view-all {
+  width: 200px;
+  height: 42px;
+  margin-bottom: 8px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  background: #1a263a;
+}
+
+.view-all-div {
+  margin: auto;
+  margin-top: 20px;
+}
+.back-img {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../../assets/background-image/book.jpeg") no-repeat;
+  background-size: cover;
+  h1{
+  position: relative;
+    margin-bottom: 140px;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    font-size: 44px;
+  }
+}

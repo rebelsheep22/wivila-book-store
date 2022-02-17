@@ -1,0 +1,29 @@
+<div style="overflow-x: hidden; overflow-wrap: normal;">
+<h1 style="text-align: center;">My Books</h1>
+<button style="position: absolute; top: 0; right: 0;" mat-button color="warn" (click)="goBack()">Go Back</button>
+<section class="book-section" id="novels">
+
+  <div class="book-cards" >
+
+    <!--  //First container-->
+    <ng-container  *ngFor="let book of books$"; >
+    <div class="container-div"  style="margin-right: 20px; margin-top: 10px;">
+      <div class="book-div">
+        <div class="img-div">
+          <img class="img-dimensions" [src]="book.imageUrl" alt="?" />
+        </div>
+
+        <span style="margin-top: 5px; text-align: center; display: block; border-bottom: 1px solid black;">Name: {{book.name}}</span>
+        <span style="display: block; border-bottom: 1px solid black;">Author: {{book.author}}</span>
+        <span style="text-align: center; padding: 10; display: block; border-bottom: 1px solid black;">Description: {{book.description}}</span>
+        <span style="display: block; border-bottom: 1px solid black;">Category: {{book.category[0].name | titlecase}}</span>
+      </div>
+      <button style="margin-left: 110px; margin-top: 10px;" mat-raised-button color="primary" *ngIf="book.category[0].name !== 'COMICS'" (click)="read(book.readingUrl)" >Read</button>
+      <button style="margin-left: 110px; margin-top: 10px;" mat-raised-button color="primary" *ngIf="book.category[0].name === 'COMICS'" (click)="read(book.readingUrl)" >Read</button>
+    </div>
+
+  </ng-container>
+  </div>
+</section>
+<button style="position: absolute; top: 0; right: 0; margin-top: 10px;" mat-raised-button color="warn" (click)="goBack()">Go Back</button>
+</div>

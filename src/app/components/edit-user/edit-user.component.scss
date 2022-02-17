@@ -1,0 +1,17 @@
+.create-post-form{
+  display: flex;
+  flex-direction: column;
+}
+.mat-dialog-actions{
+}
+body{
+  height: 100%;
+  overflow:hidden;
+
+}
+#content{
+  resize: none;
+}
+.create-post-container{
+  height: 100%;
+}

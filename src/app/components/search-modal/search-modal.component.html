@@ -1,0 +1,16 @@
+<div  *ngIf="data;else notFound" class="container-div" >
+  <div class="book-div">
+    <div class="img-div">
+      <img class="img-dimensions" [src]="data.imageUrl" alt="?" />
+    </div>
+
+    <span style="margin-top: 5px; text-align: center; display: block; border-bottom: 1px solid black;">Name: {{data.name}}</span>
+    <span style="display: block; border-bottom: 1px solid black;">Author: {{data.author}}</span>
+    <span style="text-align: center; padding: 10; display: block; border-bottom: 1px solid black;">Description: {{data.description}}</span>
+    <span style="display: block; border-bottom: 1px solid black;">Category: {{data.category[0].name | titlecase}}</span>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <h1>Book not found</h1>
+</ng-template>

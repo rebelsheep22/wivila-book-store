@@ -10,14 +10,22 @@ export class UsersService {
   constructor(
     private http:HttpClient
   ) { }
+  loggedUser = JSON.parse(sessionStorage.getItem('loggedUser')!)
+   HttpHeader : HttpHeaders = new HttpHeaders({
+    'accept' : '*/*',
+    'Authorization' : 'Bearer ' + this.loggedUser.token
+  })
+
   getUsers(){
 
-    const loggedUser = JSON.parse(sessionStorage.getItem('loggedUser')!)
-    const HttpHeader : HttpHeaders = new HttpHeaders({
-      'accept' : '*/*',
-      'Authorization' : 'Bearer ' + loggedUser.token
-    })
-    const beqa = 'beqa'
-    return this.http.get(`${environment.apiUrl}/users/`, {headers: HttpHeader})
+    return this.http.get(`${environment.apiUrl}/users/`, {headers: this.HttpHeader})
+  }
+  deleteUser(id:number){
+    return this.http.delete(`${environment.apiUrl}/users/delete/`+id, {headers: this.HttpHeader})
+  }
+  updateUser(id:number, body:any){
+    console.log(id);
+    console.log(body)
+    return this.http.put(`${environment.apiUrl}/users/update/`+id, body, {headers: this.HttpHeader})
   }
 }

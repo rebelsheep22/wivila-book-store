@@ -1,0 +1,22 @@
+
+<body>
+  <h1 mat-dialog-title >Edit Post</h1>
+  <div mat-dialog-content class="create-post-container">
+    <form [formGroup]="editUserForm" class="create-post-form">
+      <mat-form-field>
+        <input type="text" matInput formControlName="username">
+        <mat-label for="username">Username</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="email">
+        <mat-label for="email">Email</mat-label>
+      </mat-form-field>
+
+      </form>
+      <div mat-dialog-actions>
+        <button mat-raised-button color="primary" [disabled]="!editUserForm.dirty" [mat-dialog-close]="editUserForm.controls">Edit User</button>
+        <button mat-raised-button  (click)="cancelClick()">Cancel</button>
+      </div>
+  </div>
+
+</body>

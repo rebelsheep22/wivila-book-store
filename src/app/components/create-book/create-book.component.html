@@ -1,0 +1,44 @@
+<body>
+  <h1 mat-dialog-title >Create Book</h1>
+  <div mat-dialog-content class="create-post-container">
+    <form [formGroup]="createBookForm" class="create-post-form">
+      <mat-form-field>
+        <input type="text" matInput formControlName="name">
+        <mat-label for="name">Name</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="author">
+        <mat-label for="author">Author</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="description">
+        <mat-label for="description">Description</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="imageUrl">
+        <mat-label for="imageUrl">imageUrl</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="readingUrl">
+        <mat-label for="readingUrl">readingUrl</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="number" matInput formControlName="price">
+        <mat-label for="price">Price</mat-label>
+      </mat-form-field>
+      <mat-form-field appearance="legacy">
+        <mat-label>Select an option</mat-label>
+        <mat-select  formControlName="category">
+          <mat-option value="programming">Programming</mat-option>
+          <mat-option value="novels">Novels</mat-option>
+          <mat-option value="comics">Comics</mat-option>
+        </mat-select>
+      </mat-form-field>
+      </form>
+      <div mat-dialog-actions>
+        <button mat-raised-button color="primary" [mat-dialog-close]="createBookForm.controls">Create Book</button>
+        <button mat-raised-button  (click)="cancelClick()">Cancel</button>
+      </div>
+  </div>
+
+</body>

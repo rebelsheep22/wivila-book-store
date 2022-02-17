@@ -23,8 +23,8 @@
 
       <!--//Buttons-->
       <div class="button-div">
-        <button class="container-buttons">Add to cart</button>
-        <button class="container-buttons">View details</button>
+        <button class="container-buttons" (click)="addToCart(book)">Add to cart</button>
+        <button class="container-buttons" (click)="viewDetails(book)">View Description</button>
         <button class="container-buttons">Price: {{book.price}} <fa-icon [icon]="faDollar"></fa-icon></button>
       </div>
     </div>
@@ -33,7 +33,7 @@
 
 
   <div class="view-all-div">
-    <button class="view-all">View all</button>
+    <button class="view-all"  (click)="openFullPost('programming')">View all</button>
   </div>
 </section>
 <section class="book-section" id="comics">
@@ -56,8 +56,8 @@
 
       <!--//Buttons-->
       <div class="button-div">
-        <button class="container-buttons">Add to cart</button>
-        <button class="container-buttons">View details</button>
+        <button class="container-buttons" (click)="addToCart(book)">Add to cart</button>
+        <button class="container-buttons" (click)="viewDetails(book)">View Description</button>
         <button class="container-buttons">Price: {{book.price}} <fa-icon [icon]="faDollar"></fa-icon></button>
       </div>
     </div>
@@ -66,7 +66,7 @@
 
 
   <div class="view-all-div">
-    <button class="view-all">View all</button>
+    <button class="view-all" (click)="openFullPost('comics')">View all</button>
   </div>
 </section>
 <section class="book-section" id="novels">
@@ -89,8 +89,8 @@
 
       <!--//Buttons-->
       <div class="button-div">
-        <button class="container-buttons">Add to cart</button>
-        <button class="container-buttons">View details</button>
+        <button class="container-buttons" (click)="addToCart(book)">Add to cart</button>
+        <button class="container-buttons" (click)="viewDetails(book)">View Description</button>
         <button class="container-buttons">Price: {{book.price}} <fa-icon [icon]="faDollar"></fa-icon></button>
       </div>
     </div>
@@ -99,7 +99,7 @@
 
 
   <div class="view-all-div">
-    <button class="view-all">View all</button>
+    <button class="view-all" (click)="openFullPost('novels')">View all</button>
   </div>
 </section>
 

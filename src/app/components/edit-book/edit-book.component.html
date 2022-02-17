@@ -1,0 +1,34 @@
+<body>
+  <h1 mat-dialog-title>Edit Post</h1>
+  <div mat-dialog-content class="create-post-container">
+    <form [formGroup]="editBookForm" class="create-post-form">
+      <mat-form-field>
+        <input type="text" matInput formControlName="description" />
+        <mat-label for="description">Description</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="imageUrl" />
+        <mat-label for="imageUrl">Image Url</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="readingUrl" />
+        <mat-label for="readingUrl">Reading Url</mat-label>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="number" matInput formControlName="price" />
+        <mat-label for="price">Price</mat-label>
+      </mat-form-field>
+    </form>
+    <div mat-dialog-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!editBookForm.dirty"
+        [mat-dialog-close]="editBookForm.controls"
+      >
+        Edit Book
+      </button>
+      <button mat-raised-button (click)="cancelClick()">Cancel</button>
+    </div>
+  </div>
+</body>

@@ -14,6 +14,18 @@ import { RegistrationPageComponent } from './components/registration-page/regist
 import { HttpClientModule } from '@angular/common/http';
 import { FullPageBookComponent } from './components/full-page-book/full-page-book.component';
 import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { BooksPanelComponent } from './components/books-panel/books-panel.component';
+import { CreateBookComponent } from './components/create-book/create-book.component';
+import { EditBookComponent } from './components/edit-book/edit-book.component';
+import { ViewDetailsComponent } from './components/view-details/view-details.component';
+import { ViewAllComponent } from './components/view-all/view-all.component';
+import { SearchModalComponent } from './components/search-modal/search-modal.component';
+import { CartComponent } from './components/cart/cart.component';
+import { MyBooksComponent } from './components/my-books/my-books.component';
+import { UploadBookComponent } from './components/upload-book/upload-book.component';
 
 
 @NgModule({
@@ -25,7 +37,17 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
     LoginPageComponent,
     RegistrationPageComponent,
     FullPageBookComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    EditUserComponent,
+    BooksPanelComponent,
+    CreateBookComponent,
+    EditBookComponent,
+    ViewDetailsComponent,
+    ViewAllComponent,
+    SearchModalComponent,
+    CartComponent,
+    MyBooksComponent,
+    UploadBookComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +56,9 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
     AngularSvgIconModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
